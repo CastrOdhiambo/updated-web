@@ -259,7 +259,7 @@ footer {
   }
 body.background-image {
     /* Set your background image */
-    background-image: url('path/to/your/background-image.jpg'); /* Update the path */
+    background-image: url('castro.jpg'); /* Update the path */
     background-size: cover; /* Cover the entire screen */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent image repetition */
