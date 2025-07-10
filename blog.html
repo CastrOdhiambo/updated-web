@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Castro O. Odhiambo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6a11cb;
+      --secondary: #2575fc;
+      --bg: #f4f6fa;
+      --text: #2b2e4a;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+
+    nav {
+      background: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      z-index: 10;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      padding: 5px 10px;
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+      background-color: #eeeeff;
+      border-radius: 5px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .post {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .post:hover {
+      transform: translateY(-5px);
+    }
+
+    .post img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .post-content {
+      padding: 20px;
+    }
+
+    .post h3 {
+      margin-bottom: 10px;
+      font-size: 1.3em;
+      color: #333;
+    }
+
+    .post p {
+      font-size: 0.95em;
+      color: #666;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.75em;
+      padding: 5px 12px;
+      border-radius: 30px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .tech { background: #007bff; }
+    .edu { background: #28a745; }
+    .hustle { background: #f39c12; }
+    .entertainment { background: #e83e8c; }
+    .health { background: #20c997; }
+    .lifestyle { background: #6f42c1; }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #777;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">🏠 Home</a>
+  <a href="blog.html" style="color: var(--primary);">📝 Blog</a>
+  <a href="projects.html">💼 Projects</a>
+  <a href="contact.html">📬 Contact</a>
+</nav>
+
+<header>
+  <h1>Castro’s Digital Journal</h1>
+  <p>From tech hacks to lifestyle tips – stories that matter.</p>
+</header>
+
+<div class="container">
+  <div class="blog-grid">
+
+    <!-- Post 1 -->
+    <div class="post">
+      <img src="https://source.unsplash.com/600x400/?code" alt="Tech">
+      <div class="post-content">
+        <span class="tag tech">Tech</span>
+        <h3>The Rise of AI in Kenyan Classrooms</h3>
+        <p>Discover how AI tools are reshaping how students learn and teachers deliver content. Smart education is here.</p>
+      </div>
+    </div>
+
+    <!-- Post 2 -->
+    <div class="post">
+      <img src="https://source.unsplash.com/600x400/?education,student" alt="Education">
+      <div class="post-content">
+        <span class="tag edu">Education</span>
+        <h3>Mastering KCSE Computer Studies</h3>
+        <p>Here are powerful tips, revision strategies, and tools for acing Computer Studies Paper 3 and theory exams.</p>
+      </div>
+    </div>
+
+    <!-- Post 3 -->
+    <div class="post">
+      <img src="https://source.unsplash.com/600x400/?startup,money" alt="Hustle">
+      <div class="post-content">
+        <span class="tag hustle">Hustle</span>
+        <h3>How to Make Money with a Mobile Cyber</h3>
+        <p>From HELB apps to KRA returns — here's how to run a profitable mobile cyber café hustle in Kenya.</p>
+      </div>
+    </div>
+
+    <!-- Post 4 -->
+    <div class="post">
+      <img src="https://source.unsplash.com/600x400/?movie,cinema" alt="Entertainment">
+      <div class="post-content">
+        <span class="tag entertainment">Entertainment</span>
+        <h3>Top 5 Kenyan Shows to Binge This Weekend</h3>
+        <p>Netflix and chill? Here’s your curated list of the most entertaining shows with a Kenyan flavor.</p>
+      </div>
+    </div>
+
+    <!-- Post 5 -->
+    <div class="post">
+      <img src="https://source.unsplash.com/600x400/?health,fitness" alt="Health">
+      <div class="post-content">
+        <span class="tag health">Health</span>
+        <h3>Simple Morning Habits to Boost Your Health</h3>
+        <p>Wake up right. These easy habits can drastically improve your energy, focus, and overall wellness.</p>
+      </div>
+    </div>
+
+    <!-- Post 6 -->
+    <div class="post">
+      <img src="https://source.unsplash.com/600x400/?travel,lifestyle" alt="Lifestyle">
+      <div class="post-content">
+        <span class="tag lifestyle">Lifestyle</span>
+        <h3>Life Lessons I Learned in My 20s</h3>
+        <p>Some personal stories and mindset shifts that changed my view on money, relationships, and growth.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Castro Odhiambo O. | Designed with heart, built for impact ❤️
+</footer>
+
+</body>
+</html>
