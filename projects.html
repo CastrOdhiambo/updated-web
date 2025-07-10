@@ -1,65 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Castro Odhiambo - Portfolio projects page</title>
-    <link rel="stylesheet" href="../updated-web/styles.css">
-    <script src="main.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Castro Odhiambo - Portfolio</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    nav {
+      background: #007bff;
+      padding: 10px 20px;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+    header {
+      background: linear-gradient(to right, #007bff, #00c6ff);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+    }
+    .projects {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .projects h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+    .project {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    .project img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+    }
+    .project h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .project p {
+      margin-bottom: 10px;
+    }
+    .view-details {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .view-details:hover {
+      background-color: #0056b3;
+    }
+    .publications {
+      background: #e9f5ff;
+      padding: 40px 20px;
+      margin-top: 50px;
+    }
+    .publications h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .publication {
+      background: white;
+      margin: 10px auto;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 800px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .publication h4 {
+      margin-bottom: 5px;
+    }
+    .publication p {
+      color: #555;
+    }
+    footer {
+      background: #007bff;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    footer h3 {
+      margin-bottom: 15px;
+    }
+    footer .social-media-links a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer .social-media-links a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .project {
+        flex-direction: column;
+        text-align: center;
+      }
+      .project img {
+        margin: 0 auto;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        
-    </header>
 
-    <section class="projects">
-        <h2 style="text-align: center;">Projects</h2>
-        <div class="project">
-            
-            <img src="project1.png" alt="E-learning System">
-            <h3>Elearning system</h3>
-            <p><b>Description:</b> This project is aimed at developing a responsive website using HTML, CSS, and JavaScript.<br>
-                The Project alows learnes to access Learning materials from there remote areas</p>
-                <p style="margin-bottom: 10px;"><b>Technologies Used:</b> HTML, CSS, JavaScript</p>
-                <a href="e-learning.html" class="view-details" style="display: inline-block; padding: 5px 10px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">View Details</a>
-            </div>
-        <div class="project">
-            <img src="project2.jpeg" alt="shopping list calculator">
-            <h3>Online shopping list calculator And generator</h3>
-            <p><b>Description:</b> This project involves building a web application using React, Node.js, and MongoDB.
-                <br>
-              Aim of the Poject is to genearta a downloadable shoipng list for items Inserted by user</p>
-              <p style="margin-bottom: 10px;"><b>Technologies Used:</b> , HTML,CSS,Js,React, Node.js, MongoDB</p>
-              <a href="shoping list calc.html" class="view-project-details" style="display: inline-block; padding: 5px 10px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">View Details</a>
-            </div>
-        <div class="project">
-            <img src="project3.png" alt="voting system">
-            <h3>Online Voting System</h3>
-        <p ><b>Description:</b> This project involves a well designed online voting sytem.</p>
-            <p ><b>Technologies Used:</b> html, Node.js, MongoDB, CSS</p>
-            <a href="voting system.html" class="view-project-details" style="display: inline-block; padding: 5px 10px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">View Details</a>
-        
-        </div>
-    </section>
+<header>
+  <h1>Castro Odhiambo</h1>
+  <p>Full-Stack Developer | Education Tech Innovator | Content Creator</p>
+</header>
 
-    <footer>
-        <h3>Connect with Me</h3>
-        <ul class="social-media-links">
-            <a href="https://linkedin.com/your-profile" target="_blank">LinkedIn</a><br>
-            <a href = "https://web.facebook.com/profile.php?id=61550674929103" target="_blank">Facebook</a><br>
-            <a href="https://github.com/CastrOdhiambo" target="_blank">GitHub</a><br>
-            <!-- Add more social media links as needed -->
-        </ul>
-    </footer>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="projects">
+  <h2>Projects</h2>
+
+  <div class="project">
+    <img src="project1.png" alt="E-learning System">
+    <div>
+      <h3>E-learning System</h3>
+      <p><strong>Description:</strong> A responsive education platform that allows students to access learning materials remotely.</p>
+      <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+      <a href="e-learning.html" class="view-details">View Details</a>
+    </div>
+  </div>
+
+  <div class="project">
+    <img src="project2.jpeg" alt="Shopping List Calculator">
+    <div>
+      <h3>Shopping List Calculator</h3>
+      <p><strong>Description:</strong> Generates downloadable shopping lists from user inputs using modern full-stack technologies.</p>
+      <p><strong>Technologies:</strong> HTML, CSS, JavaScript, React, Node.js, MongoDB</p>
+      <a href="shoping list calc.html" class="view-details">View Details</a>
+    </div>
+  </div>
+
+  <div class="project">
+    <img src="project3.png" alt="Voting System">
+    <div>
+      <h3>Online Voting System</h3>
+      <p><strong>Description:</strong> A secure and user-friendly voting platform for institutions and organizations.</p>
+      <p><strong>Technologies:</strong> HTML, CSS, Node.js, MongoDB</p>
+      <a href="voting system.html" class="view-details">View Details</a>
+    </div>
+  </div>
+</section>
+
+<section class="publications">
+  <h2>My Publications</h2>
+  <div class="publication">
+    <h4>📝 Understanding eLearning Trends in Kenya</h4>
+    <p>Published in Digital Africa Journal, 2024 – Insights on how tech is transforming classroom learning.</p>
+  </div>
+  <div class="publication">
+    <h4>📘 HTML Notes for Beginners</h4>
+    <p>Free downloadable resource – ideal for Computer Studies students. <a href="assets/html-notes.pdf" target="_blank">Download here</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <h3>Connect with Me</h3>
+  <div class="social-media-links">
+    <a href="https://linkedin.com/your-profile" target="_blank">LinkedIn</a>
+    <a href="https://web.facebook.com/profile.php?id=61550674929103" target="_blank">Facebook</a>
+    <a href="https://github.com/CastrOdhiambo" target="_blank">GitHub</a>
+  </div>
+</footer>
+
 </body>
 </html>
