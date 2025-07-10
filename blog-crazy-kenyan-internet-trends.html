@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 5 Crazy Internet Trends That Took Over Kenya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fffdfb;
+      margin: 0;
+      padding: 0;
+      color: #2b2e4a;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    article h2 {
+      color: #ff416c;
+      margin-top: 30px;
+    }
+    article p {
+      margin-bottom: 20px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: #ff416c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    .like-section {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    #likeBtn {
+      padding: 8px 16px;
+      background-color: #ff416c;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    #likeBtn:hover {
+      background-color: #e63a5c;
+    }
+    footer {
+      text-align: center;
+      margin: 60px 0 30px;
+      color: #777;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Top 5 Crazy Internet Trends That Took Over Kenya</h1>
+  <p>By Castro Odhiambo O. | July 2025</p>
+</header>
+<div class="container">
+  <article>
+    <p>Let’s face it — if you’ve been online in Kenya for the past 5 years, then you’ve seen some absolutely chaotic, hilarious, and iconic trends take over the internet. From memes that broke the nation to challenges that had even your grandma trying them, here’s a recap of the wildest Kenyan online moments. 👇</p>
+
+    <h2>1. The "Kibe Says" Trend 🤣</h2>
+    <p>Andrew Kibe became the king of hot takes. People turned his savage advice into hilarious skits and memes. The #KibeSays challenge had dudes rethinking their relationships and ladies... well, rolling their eyes. But admit it — you laughed at least once!</p>
+
+    <h2>2. Ringtone vs Everyone 📢</h2>
+    <p>Ringtone Apoko turned his social media into a full-blown TV show. From beefing with celebrities to preaching live while shirtless, this gospel artist redefined content. Kenyans tuned in like it was Netflix!</p>
+
+    <h2>3. "Nitakufinya" Meme 📸</h2>
+    <p>A throwback street interview went viral and birthed one of the most iconic phrases ever: "Nitakufinya!" TikTokers, YouTubers, and even radio presenters rode this meme into the stratosphere. Street drama meets pop culture!</p>
+
+    <h2>4. Crazy Kennar Skits 🎭</h2>
+    <p>When Kennar says “this is how Kenyans behave when...” you know you're about to die of laughter. His viral skits made us laugh at ourselves — the matatu culture, exam pressure, noisy neighbors — he nailed it all. That's comedy + reality check!</p>
+
+    <h2>5. #WaMeamua Glow-Ups 💅</h2>
+    <p>The internet’s favorite transformation tag. From dusty village beginnings to high-key slayage — people shared their glow-up journeys, and it was inspiring AF. Plus, it reminded us: never judge a kid by their Form 1 photo 😅</p>
+
+    <p>Kenyan internet is one of the most creative, chaotic, and absolutely addictive spaces on earth. We don’t just trend — we trend with flavor. So next time you catch yourself scrolling through a viral Kenyan video at 2 AM... don’t feel guilty. You’re just part of the culture 🫶🏾</p>
+
+    <div class="like-section">
+      <button id="likeBtn">👍 Like</button>
+      <span id="likeCount">0</span> people liked this
+    </div>
+
+    <div id="disqus_thread" style="margin-top: 50px;"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = window.location.href;
+        this.page.identifier = window.location.pathname;
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://castroblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+
+    <a class="back-link" href="blog.html">&larr; Back to Blog</a>
+  </article>
+</div>
+<footer>
+  &copy; 2025 Castro Odhiambo O. | Powered by Gen Z Chaos & Kenyan Vibes
+</footer>
+<script>
+  let likeCount = localStorage.getItem('likes') || 0;
+  document.getElementById('likeCount').textContent = likeCount;
+
+  document.getElementById('likeBtn').addEventListener('click', () => {
+    likeCount++;
+    localStorage.setItem('likes', likeCount);
+    document.getElementById('likeCount').textContent = likeCount;
+  });
+</script>
+</body>
+</html>
