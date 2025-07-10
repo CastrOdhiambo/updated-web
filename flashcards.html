@@ -2,201 +2,226 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flashcard Game - Castro Odhiambo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flashcard App - Castro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
-    :root {
-      --bg: #f4f7fa;
-      --card-bg: #fff;
-      --text-color: #333;
-      --accent: #007bff;
-    }
-
-    [data-theme="dark"] {
-      --bg: #1e1e2f;
-      --card-bg: #2e2e3a;
-      --text-color: #e0e0e0;
-      --accent: #00c6ff;
-    }
-
     body {
-      margin: 0;
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text-color);
-      transition: all 0.3s ease-in-out;
-    }
-
-    header {
-      background: linear-gradient(to right, var(--accent), #00c6ff);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-      position: relative;
-    }
-
-    header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
     }
-
-    .theme-toggle {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      background: white;
-      color: var(--accent);
-      border: none;
-      padding: 8px 12px;
-      border-radius: 20px;
-      font-weight: bold;
-      cursor: pointer;
+    body.dark {
+      background: #121212;
+      color: #fff;
     }
-
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
+    header {
+      background: linear-gradient(to right, #007bff, #00c6ff);
+      color: white;
       padding: 20px;
       text-align: center;
     }
-
-    .flashcard {
-      background-color: var(--card-bg);
-      width: 100%;
-      max-width: 500px;
-      margin: 20px auto;
-      perspective: 1000px;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: transform 0.5s ease;
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
     }
-
-    .flashcard-inner {
-      position: relative;
-      width: 100%;
-      height: 200px;
-      transition: transform 0.6s;
-      transform-style: preserve-3d;
-    }
-
-    .flashcard.flipped .flashcard-inner {
-      transform: rotateY(180deg);
-    }
-
-    .front, .back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
+    .toolbar {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      padding: 20px;
-      border-radius: 10px;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
     }
-
-    .front {
-      background-color: var(--card-bg);
-    }
-
-    .back {
-      background-color: var(--accent);
-      color: white;
-      transform: rotateY(180deg);
-    }
-
-    button.shuffle-btn {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: var(--accent);
-      color: white;
+    .toolbar button {
+      padding: 10px 15px;
+      background: #007bff;
       border: none;
       border-radius: 5px;
-      font-size: 1rem;
+      color: white;
       cursor: pointer;
     }
-
-    .hint {
-      margin-top: 10px;
-      font-size: 0.9rem;
-      color: gray;
+    .toolbar button:hover {
+      background: #0056b3;
     }
-
-    @media (max-width: 600px) {
-      .flashcard {
-        height: 180px;
-      }
-      .front, .back {
-        font-size: 1.2rem;
-      }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.5s;
+      perspective: 1000px;
+      cursor: pointer;
+      position: relative;
+      min-height: 200px;
+    }
+    .card.dark {
+      background: #1e1e1e;
+      color: #fff;
+    }
+    .card.flip .front {
+      transform: rotateY(180deg);
+    }
+    .card.flip .back {
+      transform: rotateY(0);
+    }
+    .card .front, .card .back {
+      position: absolute;
+      width: 100%;
+      backface-visibility: hidden;
+      top: 0;
+      left: 0;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+    .card .back {
+      transform: rotateY(180deg);
+    }
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .category-filter {
+      margin-top: 10px;
+    }
+    select, input[type="text"] {
+      padding: 8px;
+      width: 100%;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .add-section {
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>📚 Flashcard Quiz</h1>
-    <button class="theme-toggle" onclick="toggleTheme()">🌙 Toggle Theme</button>
-    <p style="margin-top: 10px;">Click the card to reveal the answer!</p>
+    <h1>📚 Flashcard Quiz App</h1>
+    <p>Tap the card to flip & test your memory!</p>
   </header>
 
   <div class="container">
-    <div class="flashcard" onclick="flipCard(this)">
-      <div class="flashcard-inner">
-        <div class="front" id="question">What does HTML stand for?</div>
-        <div class="back" id="answer">HyperText Markup Language</div>
-      </div>
+    <div class="toolbar">
+      <button onclick="prevCard()">⬅️ Prev</button>
+      <span id="progress">0 / 0</span>
+      <button onclick="nextCard()">Next ➡️</button>
+      <button onclick="toggleDarkMode()">🌙 Toggle Mode</button>
     </div>
 
-    <button class="shuffle-btn" onclick="nextCard()">🔄 Next Card</button>
-    <p class="hint">Total Cards: <span id="cardCount">1</span></p>
+    <div class="card" id="flashcard" onclick="flipCard()">
+      <div class="front" id="front">Loading...</div>
+      <div class="back" id="back">Loading...</div>
+    </div>
+
+    <div class="controls">
+      <div class="category-filter">
+        <label>Filter by Category:</label>
+        <select onchange="filterCategory(this.value)">
+          <option value="all">All</option>
+          <option value="math">Math</option>
+          <option value="science">Science</option>
+        </select>
+      </div>
+      <button onclick="resetFlashcards()">♻️ Reset</button>
+    </div>
+
+    <div class="add-section">
+      <h3>Add New Flashcard</h3>
+      <input type="text" id="newFront" placeholder="Enter Question">
+      <input type="text" id="newBack" placeholder="Enter Answer">
+      <select id="newCategory">
+        <option value="math">Math</option>
+        <option value="science">Science</option>
+      </select>
+      <button onclick="addFlashcard()">➕ Add Flashcard</button>
+    </div>
   </div>
 
   <script>
-    const flashcard = document.querySelector('.flashcard');
-    const questionEl = document.getElementById('question');
-    const answerEl = document.getElementById('answer');
-    const cardCount = document.getElementById('cardCount');
-
-    const flashcards = [
-      { question: "What does HTML stand for?", answer: "HyperText Markup Language" },
-      { question: "What does CSS do?", answer: "It styles the structure defined by HTML" },
-      { question: "What is JavaScript?", answer: "A programming language for interactivity" },
-      { question: "What is a variable?", answer: "A container for storing data" },
-      { question: "What does DOM stand for?", answer: "Document Object Model" },
-      { question: "What is Git?", answer: "A version control system" },
-      { question: "What is a function?", answer: "A reusable block of code" },
-      { question: "What is a loop?", answer: "A control structure that repeats code" },
-      { question: "What is an array?", answer: "A list-like data structure" }
+    let cards = JSON.parse(localStorage.getItem("flashcards")) || [
+      { front: "What is 5 + 7?", back: "12", category: "math" },
+      { front: "What is H₂O commonly known as?", back: "Water", category: "science" },
+      { front: "What is 9 × 6?", back: "54", category: "math" }
     ];
-
+    let filtered = [...cards];
     let currentIndex = 0;
+    let isFlipped = false;
 
-    function flipCard(card) {
-      card.classList.toggle('flipped');
+    const cardEl = document.getElementById("flashcard");
+    const frontEl = document.getElementById("front");
+    const backEl = document.getElementById("back");
+    const progressEl = document.getElementById("progress");
+
+    function showCard(index) {
+      isFlipped = false;
+      cardEl.classList.remove("flip");
+      const card = filtered[index];
+      if (!card) return;
+      frontEl.textContent = card.front;
+      backEl.textContent = card.back;
+      updateProgress();
+    }
+
+    function flipCard() {
+      isFlipped = !isFlipped;
+      cardEl.classList.toggle("flip", isFlipped);
+    }
+
+    function prevCard() {
+      currentIndex = (currentIndex - 1 + filtered.length) % filtered.length;
+      showCard(currentIndex);
     }
 
     function nextCard() {
-      currentIndex = (currentIndex + 1) % flashcards.length;
-      const card = flashcards[currentIndex];
-      questionEl.innerText = card.question;
-      answerEl.innerText = card.answer;
-      flashcard.classList.remove('flipped');
-      cardCount.innerText = flashcards.length;
+      currentIndex = (currentIndex + 1) % filtered.length;
+      showCard(currentIndex);
     }
 
-    function toggleTheme() {
-      document.body.dataset.theme = document.body.dataset.theme === "dark" ? "" : "dark";
+    function updateProgress() {
+      progressEl.textContent = `${currentIndex + 1} / ${filtered.length}`;
     }
 
-    // Initial shuffle
-    flashcards.sort(() => Math.random() - 0.5);
-    questionEl.innerText = flashcards[0].question;
-    answerEl.innerText = flashcards[0].answer;
+    function filterCategory(category) {
+      filtered = category === "all" ? cards : cards.filter(card => card.category === category);
+      currentIndex = 0;
+      showCard(currentIndex);
+    }
+
+    function addFlashcard() {
+      const front = document.getElementById("newFront").value.trim();
+      const back = document.getElementById("newBack").value.trim();
+      const category = document.getElementById("newCategory").value;
+      if (!front || !back) return alert("Fill both fields.");
+      const newCard = { front, back, category };
+      cards.push(newCard);
+      localStorage.setItem("flashcards", JSON.stringify(cards));
+      filterCategory("all");
+      showCard(filtered.length - 1);
+    }
+
+    function resetFlashcards() {
+      if (confirm("This will clear all custom flashcards. Proceed?")) {
+        localStorage.removeItem("flashcards");
+        location.reload();
+      }
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+      cardEl.classList.toggle("dark");
+    }
+
+    // Init
+    showCard(currentIndex);
   </script>
-
 </body>
 </html>
