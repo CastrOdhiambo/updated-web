@@ -54,6 +54,28 @@
       text-decoration: underline;
     }
 
+    .like-section {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #likeBtn {
+      padding: 8px 16px;
+      background-color: #28a745;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    #likeBtn:hover {
+      background-color: #218838;
+    }
+
     footer {
       text-align: center;
       margin: 60px 0 30px;
@@ -97,6 +119,26 @@
     <h2>Conclusion</h2>
     <p>Kenya must fully embrace ICT in education to remain competitive, equitable, and future-ready. While challenges like cost, infrastructure, and training exist — the long-term benefits of ICT integration far outweigh them. It’s time we move from chalk to tech — and empower the next generation with the tools to lead.</p>
 
+    <div class="like-section">
+      <button id="likeBtn">👍 Like</button>
+      <span id="likeCount">0</span> people liked this
+    </div>
+
+    <div id="disqus_thread" style="margin-top: 50px;"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = window.location.href;
+        this.page.identifier = window.location.pathname;
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://CastroBlog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+
     <a class="back-link" href="blog.html">&larr; Back to Blog</a>
   </article>
 </div>
@@ -104,6 +146,17 @@
 <footer>
   &copy; 2025 Castro Odhiambo O. | Building minds through technology & education 💻📚
 </footer>
+
+<script>
+  let likeCount = localStorage.getItem('likes') || 0;
+  document.getElementById('likeCount').textContent = likeCount;
+
+  document.getElementById('likeBtn').addEventListener('click', () => {
+    likeCount++;
+    localStorage.setItem('likes', likeCount);
+    document.getElementById('likeCount').textContent = likeCount;
+  });
+</script>
 
 </body>
 </html>
