@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,9 +80,6 @@
     .download-links a:hover {
       background: #0056b3;
     }
-    .hidden {
-      display: none;
-    }
     iframe {
       width: 100%;
       max-width: 720px;
@@ -97,6 +93,12 @@
       padding: 20px;
       font-size: 0.9em;
       color: #777;
+    }
+    .section-title {
+      font-size: 1.6rem;
+      border-bottom: 2px solid #007bff;
+      margin-top: 40px;
+      padding-bottom: 5px;
     }
   </style>
 </head>
@@ -114,29 +116,45 @@
 
   <div class="filters">
     <button class="filter-btn active" data-category="all">All</button>
-    <button class="filter-btn" data-category="Math">Math</button>
+    <button class="filter-btn" data-category="Notes">Notes</button>
+    <button class="filter-btn" data-category="Exams">Exams</button>
+    <button class="filter-btn" data-category="Assignments">Assignments</button>
     <button class="filter-btn" data-category="Computer">Computer</button>
+    <button class="filter-btn" data-category="Math">Math</button>
   </div>
 
   <div id="resourcesList">
 
-    <div class="resource-card" data-category="Computer">
+    <div class="section-title">Notes</div>
+    <div class="resource-card" data-category="Computer Notes">
       <div class="resource-title">📘 Introduction to HTML</div>
       <div class="resource-meta">PDF, 700KB</div>
       <div class="download-links">
         <a href="assets/html-notes.pdf" target="_blank">📄 Download Notes</a>
       </div>
     </div>
+    <div class="resource-card" data-category="Computer Notes">
+      <div class="resource-title">🖼️ Computer Lab Diagram</div>
+      <div class="resource-meta">JPG Image, 250KB</div>
+      <div class="download-links">
+        <a href="assets/lab-diagram.jpg" target="_blank">📷 View Image</a>
+      </div>
+    </div>
+    <div class="resource-card" data-category="Computer Notes">
+      <div class="resource-title">🎥 Understanding Databases - KCSE Computer Studies</div>
+      <div class="resource-meta">Embedded YouTube Video</div>
+      <iframe src="https://www.youtube.com/embed/Oz1KfPkuWKQ" allowfullscreen></iframe>
+    </div>
 
-    <div class="resource-card" data-category="Computer">
+    <div class="section-title">Exams</div>
+    <div class="resource-card" data-category="Computer Exams">
       <div class="resource-title">🧠 Form 2 Computer Studies Midterm Exam</div>
       <div class="resource-meta">DOCX, 1.2MB</div>
       <div class="download-links">
         <a href="assets/computer studies f2 MIDTERM EXAM.docx" target="_blank">📄 Exam Paper</a>
       </div>
     </div>
-
-    <div class="resource-card" data-category="Math">
+    <div class="resource-card" data-category="Math Exams">
       <div class="resource-title">🧠 Form 2 Mathematics Midterm</div>
       <div class="resource-meta">Exam + Marking Scheme</div>
       <div class="download-links">
@@ -145,20 +163,15 @@
       </div>
     </div>
 
-    <div class="resource-card" data-category="Computer">
-      <div class="resource-title">🖼️ Computer Lab Diagram</div>
-      <div class="resource-meta">JPG Image, 250KB</div>
+    <div class="section-title">Assignments</div>
+    <!-- Add Assignment resources here -->
+    <div class="resource-card" data-category="Math Assignments">
+      <div class="resource-title">📄 Form 2 Math Assignment 1</div>
+      <div class="resource-meta">PDF, 500KB</div>
       <div class="download-links">
-        <a href="assets/lab-diagram.jpg" target="_blank">📷 View Image</a>
+        <a href="assets/form2-math-assignment1.pdf" target="_blank">📄 Download</a>
       </div>
     </div>
-
-    <div class="resource-card" data-category="Computer">
-      <div class="resource-title">🎥 Understanding Databases - KCSE Computer Studies</div>
-      <div class="resource-meta">Embedded YouTube Video</div>
-      <iframe src="https://www.youtube.com/embed/Oz1KfPkuWKQ" allowfullscreen></iframe>
-    </div>
-
   </div>
 
   <div style="text-align:center; margin-top: 40px;">
@@ -182,7 +195,8 @@
 
       const category = btn.dataset.category;
       resourceCards.forEach(card => {
-        const match = category === 'all' || card.dataset.category === category;
+        const cardCat = card.dataset.category;
+        const match = category === 'all' || cardCat.includes(category);
         card.style.display = match ? 'block' : 'none';
       });
     });
