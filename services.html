@@ -2,242 +2,241 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Services - Castro Odhiambo</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
-    :root {
-      --primary: #007bff;
-      --bg: #f4f8fc;
-      --text: #333;
-      --card-bg: #fff;
-    }
     body {
-      margin: 0;
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6fa;
+      color: #333;
     }
     header {
-      background: var(--primary);
+      background: linear-gradient(to right, #007bff, #00c6ff);
       color: white;
-      padding: 20px 0;
-      text-align: center;
+      padding: 20px 30px;
     }
     nav ul {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 25px;
+      gap: 20px;
       padding: 0;
       margin: 0;
     }
     nav a {
-      color: white;
       text-decoration: none;
-      font-weight: 600;
+      color: white;
+      font-weight: bold;
     }
     nav a:hover {
       text-decoration: underline;
     }
 
-    .services {
-      padding: 50px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .services h2 {
+    h2, h3 {
       text-align: center;
-      margin-bottom: 40px;
-      font-size: 2rem;
-    }
-    .card-grid {
-      display: grid;
-      gap: 30px;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    .service-card {
-      background: var(--card-bg);
-      border-radius: 10px;
-      padding: 25px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-      transition: transform 0.3s;
-    }
-    .service-card:hover {
-      transform: translateY(-5px);
-    }
-    .service-card i {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-    .service-card h3 {
-      margin: 0;
-      font-size: 1.2rem;
-    }
-    .service-card p {
-      margin-top: 10px;
-      font-size: 0.95rem;
+      margin-top: 30px;
     }
 
-    .services-table {
-      margin-top: 60px;
+    .services {
+      padding: 30px 20px;
     }
-    .services-table table {
+
+    .service {
+      background: white;
+      margin: 20px auto;
+      max-width: 800px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .service strong {
+      display: block;
+      color: #007bff;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    #services-table {
+      background-color: #fff;
+      margin: 40px auto;
+      max-width: 900px;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    #services-table table {
       width: 100%;
       border-collapse: collapse;
-      background: white;
     }
-    .services-table th,
-    .services-table td {
+
+    #services-table th, #services-table td {
+      padding: 12px;
       border: 1px solid #ccc;
-      padding: 15px;
       text-align: left;
     }
-    .services-table th {
+
+    #services-table th {
       background-color: #007bff;
       color: white;
     }
 
     .testimonials {
-      margin: 60px 0;
-      padding: 30px;
-      background: #fff;
-      border-radius: 10px;
+      background-color: #f9f9f9;
+      padding: 30px 20px;
     }
+
     .testimonial {
-      margin-bottom: 30px;
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
     }
-    .testimonial p {
-      margin: 0;
-    }
-    .testimonial p:last-child {
-      text-align: right;
-      font-weight: bold;
-      margin-top: 10px;
+
+    .testimonial p:first-child {
+      font-style: italic;
+      color: #444;
     }
 
     footer {
-      background: #222;
+      background: #007bff;
       color: white;
-      padding: 30px;
+      padding: 20px;
       text-align: center;
     }
-    .social-media-links a {
-      color: #00c6ff;
-      margin: 0 10px;
+
+    footer a {
+      color: white;
       text-decoration: none;
-      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
     <nav>
       <ul>
-        <li><a href="index.html">🏠 Home</a></li>
-        <li><a href="about.html">👤 About</a></li>
-        <li><a href="services.html">🛠️ Services</a></li>
-        <li><a href="projects.html">💼 Projects</a></li>
-        <li><a href="blog.html">💼 Blog</a></li>
-        <li><a href="resources.html">💼 Resources</a></li>
-        <li><a href="contact.html">✉️ Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="services">
-    <h2 data-aos="fade-up">🚀 My Services</h2>
-    <div class="card-grid">
-      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-        <i class="fas fa-paint-brush"></i>
-        <h3>Web Design</h3>
-        <p>Custom responsive designs crafted to fit your brand and goals.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-        <i class="fas fa-code"></i>
-        <h3>Web Development</h3>
-        <p>Build full-stack web apps with modern frameworks and tools.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-        <i class="fas fa-lightbulb"></i>
-        <h3>IT Consulting</h3>
-        <p>Technical guidance on software projects and development strategies.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-        <i class="fas fa-chart-line"></i>
-        <h3>SEO Optimization</h3>
-        <p>Boost visibility and improve your website’s ranking on search engines.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-        <i class="fas fa-shopping-cart"></i>
-        <h3>E-Commerce</h3>
-        <p>Launch online stores with payment integration and secure checkout.</p>
-      </div>
+    <h2>💼 My Services</h2>
+
+    <div class="service">
+      <strong>🔥 Firebase Student Portal Development</strong>
+      <p>Modern real-time portals for schools with login, assignments, results, and admin tools.</p>
     </div>
 
-    <div class="services-table">
-      <h3>📋 Services Overview</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Service</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Web Design</td>
-            <td>Beautiful, mobile-friendly website designs using Figma, HTML5 & CSS3.</td>
-          </tr>
-          <tr>
-            <td>Web Development</td>
-            <td>Dynamic sites using PHP, Firebase, JavaScript, and modern libraries.</td>
-          </tr>
-          <tr>
-            <td>IT Consulting</td>
-            <td>Project planning, database architecture, and performance optimization.</td>
-          </tr>
-          <tr>
-            <td>SEO Optimization</td>
-            <td>Keyword research, page speed improvement, and metadata enhancement.</td>
-          </tr>
-          <tr>
-            <td>E-Commerce</td>
-            <td>Full setup of secure e-commerce platforms like WooCommerce or custom-built PHP solutions.</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="service">
+      <strong>🧠 Educational Resource Platforms</strong>
+      <p>Upload/download portals for notes, exams, assignments—perfect for students & teachers.</p>
     </div>
 
-    <div class="testimonials" data-aos="fade-up">
-      <h3>🗣️ Testimonials</h3>
-      <div class="testimonial">
-        <p>"Castro Odhiambo transformed my vision into reality. Professional and dependable."</p>
-        <p>– Emillio Staneley</p>
-      </div>
-      <div class="testimonial">
-        <p>"Superb support, great communication, and powerful results. Highly recommended!"</p>
-        <p>– Jane Smith</p>
-      </div>
+    <div class="service">
+      <strong>🌐 Web Design & Development</strong>
+      <p>Responsive websites tailored to your brand using HTML, CSS, JS, PHP, and Firebase.</p>
+    </div>
+
+    <div class="service">
+      <strong>📱 Mobile Cyber Services</strong>
+      <p>HELB/HEF applications, KRA PIN registration, admission letter downloads, and more.</p>
+    </div>
+
+    <div class="service">
+      <strong>📊 SEO & Digital Marketing</strong>
+      <p>Boost your website's visibility on search engines and reach your ideal audience.</p>
+    </div>
+
+    <div class="service">
+      <strong>🛒 E-commerce Solutions</strong>
+      <p>Launch secure online stores with payment gateways and inventory systems.</p>
+    </div>
+
+    <div class="service">
+      <strong>🎓 Digital Skills Training</strong>
+      <p>Hands-on ICT training on coding, websites, and digital literacy for students and youth.</p>
     </div>
   </section>
 
-  <footer>
-    <h3>Connect with Me</h3>
-    <div class="social-media-links">
-      <a href="https://linkedin.com/your-profile" target="_blank">LinkedIn</a>
-      <a href="https://web.facebook.com/profile.php?id=61550674929103" target="_blank">Facebook</a>
-      <a href="https://github.com/CastrOdhiambo" target="_blank">GitHub</a>
+  <div id="services-table">
+    <h3>📋 Service Breakdown Table</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Firebase Edu Portals</td>
+          <td>School systems with login, roles, assignments, and real-time hosting.</td>
+        </tr>
+        <tr>
+          <td>Resources Pages</td>
+          <td>Well-organized, searchable content portals with categories and upload tools.</td>
+        </tr>
+        <tr>
+          <td>Web Design</td>
+          <td>Modern, fast, mobile-friendly websites for businesses or personal brands.</td>
+        </tr>
+        <tr>
+          <td>Mobile Cyber Services</td>
+          <td>Affordable HELB, KRA, University Admission and other online government services.</td>
+        </tr>
+        <tr>
+          <td>Training</td>
+          <td>ICT mentorship, online skill development, and tech empowerment programs.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="testimonials">
+    <h3>💬 Testimonials</h3>
+
+    <div class="testimonial">
+      <p>"Working with Castro Odhiambo was an absolute pleasure! Their attention to detail and dedication is unmatched."</p>
+      <p style="text-align: right;">– Emillio Stanley</p>
     </div>
+
+    <div class="testimonial">
+      <p>"Castro built our student portal in under a week. It works like magic. We can post assignments, results, and even exams!"</p>
+      <p style="text-align: right;">– Madam Evelyn (ICT Coordinator)</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>📞 Connect with me:</p>
+    <a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+    <a href="https://web.facebook.com/profile.php?id=61550674929103" target="_blank">Facebook</a>
+    <a href="https://github.com/CastrOdhiambo" target="_blank">GitHub</a>
     <p>&copy; 2025 Castro Odhiambo | All rights reserved</p>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
 </body>
 </html>
